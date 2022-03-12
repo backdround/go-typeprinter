@@ -9,14 +9,14 @@ import (
 type element struct {
 	name string
 
-	rType reflect.Type
+	rType  reflect.Type
 	rValue reflect.Value
 }
 
 func newElement(v interface{}, name string) element {
 	return element{
-		name: name,
-		rType: reflect.TypeOf(v),
+		name:   name,
+		rType:  reflect.TypeOf(v),
 		rValue: reflect.ValueOf(v),
 	}
 }
@@ -29,9 +29,9 @@ func (e element) Fields() []element {
 
 		fieldStruct := e.rType.Field(i)
 
-		fieldElement := element {
-			name: fieldStruct.Name,
-			rType: fieldStruct.Type,
+		fieldElement := element{
+			name:   fieldStruct.Name,
+			rType:  fieldStruct.Type,
 			rValue: e.rValue.Field(i),
 		}
 

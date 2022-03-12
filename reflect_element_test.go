@@ -1,8 +1,8 @@
 package structprinter
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func assertEqual(t *testing.T, real interface{}, expected interface{},
@@ -16,6 +16,7 @@ type testStruct struct {
 	name string
 	age  int
 }
+
 var testValue = testStruct{"bob", 20}
 
 func TestRootProperties(t *testing.T) {

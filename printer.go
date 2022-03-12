@@ -31,7 +31,6 @@ func withPostfixOrAlternative(v string, postfix string, alternative string) stri
 	return alternative
 }
 
-
 func makeRepresentation(e element, indent string) string {
 	switch e.Kind() {
 	case reflect.Struct:

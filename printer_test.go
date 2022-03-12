@@ -33,7 +33,6 @@ func TestLambdaEmptyStruct(t *testing.T) {
 	assertEqual(t, representation, "{}\n", "Empty representation is invalid")
 }
 
-
 type emptyStruct struct{}
 
 func TestUseTypeIfUnnamedStruct(t *testing.T) {
@@ -42,11 +41,11 @@ func TestUseTypeIfUnnamedStruct(t *testing.T) {
 		"Unnamed sturct denotion is invalid")
 }
 
-type person struct{
+type person struct {
 	name string
-	age int
+	age  int
 	work struct {
-		post string
+		post  string
 		floor int
 	}
 }
@@ -54,12 +53,12 @@ type person struct{
 func TestStruct(t *testing.T) {
 	p := person{
 		name: "bob",
-		age: 20,
+		age:  20,
 		work: struct {
-			post string
+			post  string
 			floor int
-		} {
-			post: "boss",
+		}{
+			post:  "boss",
 			floor: 32,
 		},
 	}
@@ -67,7 +66,7 @@ func TestStruct(t *testing.T) {
 	real := structprinter.Sprint(p)
 
 	expected :=
-`person {
+		`person {
 	name: "bob"
 	age: 20
 	work {
