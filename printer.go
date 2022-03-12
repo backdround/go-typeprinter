@@ -1,14 +1,4 @@
-// Package present stuct in pretty and simple string.
-// For example:
-//
-//	Person {
-//		name: "bob"
-//		age: 20
-//		work {
-//			post: "boss"
-//			floor: 32
-//		}
-//	}
+// Package present struct in pretty and simple string.
 package structprinter
 
 import (
