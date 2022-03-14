@@ -1,11 +1,10 @@
+[![Go Reference](https://img.shields.io/badge/go-reference-%2300ADD8?style=flat-square)](https://pkg.go.dev/github.com/backdround/structprinter)
 [![Tests](https://img.shields.io/github/workflow/status/backdround/structprinter/tests?label=tests&style=flat-square)](https://github.com/backdround/structprinter/actions)
 [![Codecov](https://img.shields.io/codecov/c/github/backdround/structprinter?style=flat-square)](https://app.codecov.io/gh/backdround/structprinter/)
 [![Go Report](https://goreportcard.com/badge/github.com/backdround/structprinter?style=flat-square)](https://goreportcard.com/report/github.com/backdround/structprinter)
 
 # Struct printer
 Package present struct in pretty and simple string.  
-
-[API documentation](https://pkg.go.dev/github.com/backdround/structprinter)
 
 ### Installation
 ```bash
