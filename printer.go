@@ -1,4 +1,4 @@
-// Package present struct in pretty and simple string.
+// Package structprinter present struct in pretty and simple string.
 package structprinter
 
 import (
