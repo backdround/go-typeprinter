@@ -15,4 +15,11 @@ jobs:
         run: git clone --depth 1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" ./
 
       - name: Run tests
-        run: go test -v
+        run: go test -v -coverprofile=coverage.txt -covermode=count
+
+      - name: Upload coverage to codecov
+        uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage.txt
+          fail_ci_if_error: true
+          verbose: true
