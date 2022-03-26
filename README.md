@@ -1,14 +1,14 @@
-[![Go Reference](https://img.shields.io/badge/go-reference-%2300ADD8?style=flat-square)](https://pkg.go.dev/github.com/backdround/structprinter)
-[![Tests](https://img.shields.io/github/workflow/status/backdround/structprinter/tests?label=tests&style=flat-square)](https://github.com/backdround/structprinter/actions)
-[![Codecov](https://img.shields.io/codecov/c/github/backdround/structprinter?style=flat-square)](https://app.codecov.io/gh/backdround/structprinter/)
-[![Go Report](https://goreportcard.com/badge/github.com/backdround/structprinter?style=flat-square)](https://goreportcard.com/report/github.com/backdround/structprinter)
+[![Go Reference](https://img.shields.io/badge/go-reference-%2300ADD8?style=flat-square)](https://pkg.go.dev/github.com/backdround/typeprinter)
+[![Tests](https://img.shields.io/github/workflow/status/backdround/typeprinter/tests?label=tests&style=flat-square)](https://github.com/backdround/typeprinter/actions)
+[![Codecov](https://img.shields.io/codecov/c/github/backdround/typeprinter?style=flat-square)](https://app.codecov.io/gh/backdround/typeprinter/)
+[![Go Report](https://goreportcard.com/badge/github.com/backdround/typeprinter?style=flat-square)](https://goreportcard.com/report/github.com/backdround/typeprinter)
 
-# Struct printer
-Package present struct in pretty and simple string.  
+# Type printer
+Package present type in pretty and simple string.  
 
 ### Installation
 ```bash
-go get github.com/backdround/structprinter
+go get github.com/backdround/typeprinter
 ```
 
 
@@ -19,7 +19,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/backdround/structprinter"
+	"github.com/backdround/typeprinter"
 )
 
 type Person struct {
@@ -44,7 +44,7 @@ func main() {
 		},
 	}
 
-	fmt.Print(structprinter.Sprint(p))
+	fmt.Print(typeprinter.Sprint(p))
 }
 ```
 

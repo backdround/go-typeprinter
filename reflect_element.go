@@ -1,4 +1,4 @@
-package structprinter
+package typeprinter
 
 import (
 	"fmt"

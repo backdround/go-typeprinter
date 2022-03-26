@@ -1,5 +1,5 @@
-// Package structprinter present struct in pretty and simple string.
-package structprinter
+// Package typeprinter present struct in pretty and simple string.
+package typeprinter
 
 import (
 	"fmt"
