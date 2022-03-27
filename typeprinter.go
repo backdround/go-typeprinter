@@ -1,7 +1,6 @@
 // Package typeprinter present struct in pretty and simple string.
 package typeprinter
 
-
 // Sprint return string with a simple struct representation.
 func Sprint(v interface{}) string {
 	if v == nil {
@@ -9,4 +8,3 @@ func Sprint(v interface{}) string {
 	}
 	return makeRepresentation(newElement(v, ""), "")
 }
-
