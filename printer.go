@@ -1,18 +1,9 @@
-// Package typeprinter present struct in pretty and simple string.
 package typeprinter
 
 import (
 	"fmt"
 	"reflect"
 )
-
-// Sprint return string with a simple struct representation.
-func Sprint(v interface{}) string {
-	if v == nil {
-		return fmt.Sprintf("\n")
-	}
-	return makeRepresentation(newElement(v, ""), "")
-}
 
 func withPostfixOrAlternative(v string, postfix string, alternative string) string {
 	if v != "" {
