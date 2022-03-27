@@ -25,12 +25,12 @@ func makeRepresentation(e element, indent string) string {
 
 func representValue(e element, indent string) string {
 	name := withPostfixOrAlternative(e.Name(), ": ", "")
-	return fmt.Sprintf("%s%s%s\n", indent, name, e.Value())
+	return fmt.Sprintf("%s%s%s", indent, name, e.Value())
 }
 
 func representString(e element, indent string) string {
 	name := withPostfixOrAlternative(e.Name(), ": ", "")
-	return fmt.Sprintf("%s%s\"%s\"\n", indent, name, e.Value())
+	return fmt.Sprintf("%s%s\"%s\"", indent, name, e.Value())
 }
 
 func representStruct(e element, indent string) string {
@@ -45,14 +45,14 @@ func representStruct(e element, indent string) string {
 	}
 
 	if len(elementFields) == 0 {
-		return indent + structName + "{}\n"
+		return indent + structName + "{}"
 	}
 
 	representation := indent + structName + "{\n"
 	for _, e := range elementFields {
-		representation += makeRepresentation(e, indent+"\t")
+		representation += makeRepresentation(e, indent+"\t") + "\n"
 	}
-	representation += indent + "}\n"
+	representation += indent + "}"
 
 	return representation
 }
