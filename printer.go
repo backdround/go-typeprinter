@@ -5,13 +5,6 @@ import (
 	"reflect"
 )
 
-func withPostfixOrAlternative(v string, postfix string, alternative string) string {
-	if v != "" {
-		return v + postfix
-	}
-	return alternative
-}
-
 func makeRepresentation(e element, indent string) string {
 	switch e.Kind() {
 	case reflect.Struct:
@@ -21,6 +14,13 @@ func makeRepresentation(e element, indent string) string {
 	default:
 		return representValue(e, indent)
 	}
+}
+
+func withPostfixOrAlternative(v string, postfix string, alternative string) string {
+	if v != "" {
+		return v + postfix
+	}
+	return alternative
 }
 
 func representValue(e element, indent string) string {
