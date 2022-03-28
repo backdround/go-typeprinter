@@ -1,8 +1,12 @@
 package typeprinter
 
 import (
+	"io/ioutil"
+	"os"
 	"testing"
 )
+
+// Test Sprint.
 
 func TestNil(t *testing.T) {
 	assertEqual(t, "", Sprint(nil), "Nil representation is invalid")
@@ -38,7 +42,7 @@ type person struct {
 	}
 }
 
-func TestStruct(t *testing.T) {
+func TestComplexSprint(t *testing.T) {
 	p := person{
 		name: "bob",
 		age:  20,
@@ -54,7 +58,7 @@ func TestStruct(t *testing.T) {
 	real := Sprint(p)
 
 	expected :=
-`person {
+		`person {
 	name: "bob"
 	age: 20
 	work {
@@ -63,4 +67,66 @@ func TestStruct(t *testing.T) {
 	}
 }`
 	assertEqual(t, expected, real, "Sturct representation is invalid")
+}
+
+// Test non Sprint.
+
+type kid struct {
+	name string
+	age  int
+}
+
+var kidValue = kid{name: "kid", age: 1}
+
+var kidExpect = `kid {
+	name: "kid"
+	age: 1
+}`
+
+func TestSimpleSprintln(t *testing.T) {
+	assertEqual(t, kidExpect+"\n", Sprintln(kidValue),
+		"Sprintln simple struct representation is invalid")
+}
+
+// interceptStdout execute f, intercept stdout output and return it like string.
+func interceptStdout(f func()) string {
+	r, w, err := os.Pipe()
+	if err != nil {
+		panic(err)
+	}
+
+	oldStdout := os.Stdout
+	os.Stdout = w
+
+	go func() {
+		f()
+		os.Stdout.Close()
+	}()
+
+	data, err := ioutil.ReadAll(r)
+	os.Stdout = oldStdout
+
+	if err != nil {
+		panic(err)
+	}
+
+	return string(data)
+}
+
+func TestSimplePrint(t *testing.T) {
+	output := interceptStdout(func() {
+		Print(kidValue)
+	})
+
+	assertEqual(t, kidExpect, output,
+		"Print simple struct representation output is invalid")
+}
+
+func TestSimplePrintln(t *testing.T) {
+	output := interceptStdout(func() {
+		Println(kidValue)
+	})
+
+	assertEqual(t, kidExpect+"\n", output,
+		"Println simple struct representation output is invalid")
 }
