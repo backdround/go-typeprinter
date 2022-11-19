@@ -1,3 +1,3 @@
-module github.com/backdround/typeprinter
+module github.com/backdround/go-typeprinter
 
 go 1.17
