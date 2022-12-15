@@ -1,5 +1,5 @@
 [![Go Reference](https://img.shields.io/badge/go-reference-%2300ADD8?style=flat-square)](https://pkg.go.dev/github.com/backdround/go-typeprinter)
-[![Tests](https://img.shields.io/github/workflow/status/backdround/go-typeprinter/tests?label=tests&style=flat-square)](https://github.com/backdround/go-typeprinter/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/backdround/go-typeprinter/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/backdround/go-typeprinter/actions)
 [![Codecov](https://img.shields.io/codecov/c/github/backdround/go-typeprinter?style=flat-square)](https://app.codecov.io/gh/backdround/go-typeprinter/)
 [![Go Report](https://goreportcard.com/badge/github.com/backdround/go-typeprinter?style=flat-square)](https://goreportcard.com/report/github.com/backdround/go-typeprinter)
 
